@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="clock">
+                <div>
+                    <p id="hours">00</p>
+                    <span>hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    setInterval(()=>{
+            const hour =document.getElementById("hours");
+        const min=document.getElementById("minutes");
+        const sec = document.getElementById("seconds");
+        const current = new Date();
+        hour.innerHTML= (current.getHours()<10?"0":"")+current.getHours();
+        min.innerHTML= (current.getMinutes()<10?"0":"")+current.getMinutes();
+        sec.innerHTML= (current.getSeconds()<10?"0":"")+current.getSeconds();
+        },1000);
+         </script>
+</body>
+</html>
